@@ -1,217 +1,146 @@
-Machine Learning Driven Structure–Property Correlation for Alloy Phase Prediction
-Overview
+# Machine Learning Driven Structure–Property Correlation for Alloy Phase Prediction
 
-This project applies Machine Learning techniques to predict the phase structure of High Entropy Alloys (HEAs) based on compositional and thermodynamic features. HEAs are advanced metallic materials whose mechanical properties depend heavily on their phase structure such as FCC, BCC, FCC+BCC, and Intermetallic phases.
+An AI-based system that predicts alloy phase stability using machine learning models such as Neural Networks, XGBoost, Random Forest, and SVM.
 
-Traditional experimental methods for determining alloy phases are slow, expensive, and resource-intensive. This project demonstrates how Machine Learning models can accurately predict alloy phases quickly and efficiently, enabling faster materials design and optimization.
+---
 
-Objectives
+## Overview
 
-Predict phase structure of High Entropy Alloys using Machine Learning
+This project uses machine learning to predict the phase structure of alloys based on their composition, thermodynamic properties, and processing parameters. Predicting alloy phases is critical in materials engineering because phase structure directly affects mechanical properties such as strength, hardness, and durability. Traditional experimental methods are expensive and time-consuming, so this project demonstrates how ML can accelerate alloy design and material discovery. fileciteturn0file0
 
-Compare performance of multiple ML algorithms
+The system analyzes features such as Valence Electron Concentration (VEC), entropy of mixing, enthalpy of mixing, atomic size difference, and synthesis parameters to classify alloys into phase categories like FCC, BCC, Intermetallic, and mixed phases.
 
-Identify most important features influencing alloy phase prediction
+---
 
-Evaluate model performance using standard classification metrics
+## Features
 
-Determine the best model for accurate and reliable prediction
+* Predict alloy phase using Machine Learning
+* Supports multiple ML models: Neural Network, XGBoost, Random Forest, and SVM
+* Feature importance analysis to identify key physical parameters
+* Data preprocessing including scaling, encoding, and cleaning
+* High prediction accuracy with Neural Network achieving best performance
 
-Dataset Description
-Features Used
+---
 
-The dataset includes compositional, thermodynamic, and synthesis features such as:
+## Dataset
 
-Number of Elements in Alloy
+* Total Samples: 1420 alloy compositions
+* Features: 16 input features including
 
-Valence Electron Concentration (VEC)
+  * Valence Electron Concentration (VEC)
+  * Atomic Size Difference
+  * Enthalpy of Mixing
+  * Entropy of Mixing
+  * Electronegativity Difference
+  * Processing and synthesis parameters
 
-Atomic Size Difference
+Target Classes:
 
-Electronegativity Difference
+* FCC (Face Centered Cubic)
+* BCC (Body Centered Cubic)
+* Intermetallic (IM)
+* Mixed phases
 
-Enthalpy of Mixing (ΔHmix)
+Dataset enables prediction of phase stability based on composition and structure. fileciteturn0file0
 
-Entropy of Mixing (ΔSmix)
+---
 
-Synthesis Route
+## Machine Learning Models Used
 
-Phase Structure (Target Variable)
+The following models were implemented and compared:
 
-Data Preprocessing
+* Neural Network (MLPClassifier) → Best performance
+* XGBoost → Strong generalization
+* Random Forest → High accuracy and interpretability
+* Support Vector Machine (SVM) → Moderate performance
 
-Removed irrelevant columns
+Neural Network achieved highest test accuracy (~89%) and best balanced performance across all classes. fileciteturn0file0
 
-Handled missing values
+---
 
-Encoded categorical variables
+## Workflow
 
-Standardized numerical features
+1. Collect alloy composition and processing data
+2. Clean and preprocess dataset
+3. Encode categorical features
+4. Scale numerical features
+5. Train multiple ML models
+6. Evaluate performance using accuracy and balanced accuracy
+7. Compare models and select best performing model
 
-Balanced dataset using SMOTE (for SVM)
+Machine learning enables faster and cost-effective alloy design compared to traditional experimental approaches. fileciteturn0file1
 
-Machine Learning Models Used
+---
 
-Four Machine Learning models were implemented and compared:
+## Tech Stack
 
-1. Support Vector Machine (SVM)
+* Python
+* Scikit-learn
+* XGBoost
+* NumPy
+* Pandas
+* Matplotlib
 
-Kernel: RBF
+---
 
-Training Accuracy: ~75%
+## Results
 
-Test Accuracy: ~78%
+Model Performance Summary:
 
-Used StandardScaler and SMOTE
+* Neural Network → Best accuracy and generalization
+* XGBoost → Strong and stable performance
+* Random Forest → Reliable and interpretable
+* SVM → Lowest performance among tested models
 
-Feature importance analyzed using permutation importance
+Key Features influencing prediction:
 
-2. XGBoost Classifier
+* Valence Electron Concentration (VEC)
+* Enthalpy of Mixing
+* Entropy of Mixing
+* Atomic Size Difference
 
-Training Accuracy: High
+---
 
-Test Accuracy: ~85%
+## Project Structure
 
-Strong classification performance
+```
+project/
+│── dataset/
+│── models/
+│── notebooks/
+│── main.py
+│── requirements.txt
+│── README.md
+```
 
-Efficient and scalable algorithm
+---
 
-3. Random Forest Classifier
+## Applications
 
-Number of trees: 100
+* Material science research
+* Alloy design optimization
+* Mechanical property prediction
+* Accelerated material discovery
 
-Training Accuracy: ~92%
+---
 
-Test Accuracy: ~85%
+## Future Improvements
 
-Provided strong feature importance insights
+* Use Deep Learning architectures
+* Increase dataset size
+* Deploy as web application
+* Integrate real-time material prediction
 
-Robust and reliable performance
+---
 
-4. Neural Network (MLP Classifier)
+## Author
 
-Architecture: 2 hidden layers (100, 50 neurons)
+Kaushal S
+AI and Robotics Developer
+Amrita Vishwa Vidyapeetham
 
-Activation: ReLU
+---
 
-Optimizer: Adam
+## License
 
-Training Accuracy: ~88%
-
-Test Accuracy: ~89%
-
-Best performing model overall
-
-Methodology
-Step 1: Data Preparation
-
-Load dataset
-
-Clean and preprocess data
-
-Encode categorical variables
-
-Handle missing values
-
-Step 2: Feature Engineering
-
-Select relevant features
-
-Standardize numerical features
-
-Split dataset into training and testing sets
-
-Step 3: Model Training
-
-Train SVM, XGBoost, Random Forest, and Neural Network models
-
-Apply appropriate preprocessing techniques
-
-Step 4: Model Evaluation
-
-Models evaluated using:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-Score
-
-Confusion Matrix
-
-Feature Importance
-
-Results Summary
-Model	Test Accuracy	Performance
-Neural Network	89%	Best
-XGBoost	85%	Excellent
-Random Forest	85%	Excellent
-SVM	78%	Moderate
-Conclusion
-
-The Neural Network (MLP Classifier) achieved the best overall performance and demonstrated the highest accuracy and reliability for predicting alloy phases.
-
-XGBoost and Random Forest also performed very well and are strong alternatives with lower computational complexity.
-
-Support Vector Machine performed comparatively lower and may not be ideal for this dataset.
-
-This project demonstrates the effectiveness of Machine Learning in accelerating material discovery and reducing dependence on expensive experimental methods.
-
-Technologies Used
-
-Python
-
-Scikit-learn
-
-XGBoost
-
-NumPy
-
-Pandas
-
-Matplotlib
-
-Seaborn
-
-Project Structure
-project-folder/
-│
-├── data/
-│   └── alloy_dataset.csv
-│
-├── models/
-│   ├── svm_model.py
-│   ├── xgboost_model.py
-│   ├── random_forest_model.py
-│   └── neural_network_model.py
-│
-├── notebooks/
-│   └── analysis.ipynb
-│
-├── results/
-│   ├── confusion_matrix.png
-│   └── feature_importance.png
-│
-└── README.md
-
-Applications
-
-Materials Informatics
-
-Alloy Design Optimization
-
-Predictive Materials Science
-
-Accelerated Materials Discovery
-
-Team Members
-
-Rishitha C – Support Vector Machine
-
-Divya Rithanya S – Random Forest
-
-Karthikeya Y – XGBoost
-
-Kaushal S – Neural Networks
+MIT License
