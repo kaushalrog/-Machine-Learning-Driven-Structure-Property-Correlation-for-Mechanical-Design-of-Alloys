@@ -6,7 +6,7 @@ An AI-based system that predicts alloy phase stability using machine learning mo
 
 ## Overview
 
-This project uses machine learning to predict the phase structure of alloys based on their composition, thermodynamic properties, and processing parameters. Predicting alloy phases is critical in materials engineering because phase structure directly affects mechanical properties such as strength, hardness, and durability. Traditional experimental methods are expensive and time-consuming, so this project demonstrates how ML can accelerate alloy design and material discovery. fileciteturn0file0
+This project uses machine learning to predict the phase structure of alloys based on their composition, thermodynamic properties, and processing parameters. Predicting alloy phases is critical in materials engineering because phase structure directly affects mechanical properties such as strength, hardness, and durability. Traditional experimental methods are expensive and time-consuming, so this project demonstrates how ML can accelerate alloy design and material discovery. 
 
 The system analyzes features such as Valence Electron Concentration (VEC), entropy of mixing, enthalpy of mixing, atomic size difference, and synthesis parameters to classify alloys into phase categories like FCC, BCC, Intermetallic, and mixed phases.
 
